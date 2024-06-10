@@ -56,7 +56,7 @@ module.exports =  {
                    '- [BDE](https://discord.gg/aHQC5q4ubz)'
         }
         )
-        .setFooter({ text: 'Id>pl'});//, iconURL: 'https://example.com/icon.png' });
+        .setFooter({ text: 'Id>pl'}); // just facts
 
         /**/
         await channel.send({embeds : [embedStart]});
