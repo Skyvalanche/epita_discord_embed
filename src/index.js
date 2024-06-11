@@ -70,6 +70,6 @@ client.on('interactionCreate', async (interaction) => {
 
         await interaction.channel.send({embeds : [embedStart]});
     }
-}
+})
 
 client.login(process.env.TOKEN);
