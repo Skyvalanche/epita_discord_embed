@@ -72,12 +72,12 @@ client.on('interactionCreate', async (interaction) => {
 
     if (interaction.commandName == "embededit") {
 
-        const channelId = interaction.options.get("messageid").value;
-        console.log(channelId);
+        const msgId = interaction.options.get("messageid").value;
         interaction.reply({ephemeral: true, content: `bouhDité`});
-        
-        const channel = await interaction.guild.channels.cache.get(channelId);
-        
+        const channel = interaction.channel;
+        const message = await channel.messages.fetch(msgId);
+
+
         const embedStart = new EmbedBuilder().setColor('#0099ff')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
         .setTitle('Liens Utiles')
         .addFields( {
@@ -125,8 +125,15 @@ client.on('interactionCreate', async (interaction) => {
             }
             )
         .setFooter({ text: 'Id>pl'}); // just facts
-
-        await interaction.channel.edit({embeds : [embedStart]});
+        /*
+       await message.edit({ embeds: [embedStart] })
+            .then(updatedMessage => {
+                console.log('Message edited successfully', updatedMessage);
+            })
+            .catch(error => {
+                console.error('Error editing message:', error);
+            });*/
+        await message.edit({ embeds: [embedStart] });
     }
 
 })
