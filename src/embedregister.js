@@ -3,19 +3,21 @@ const { REST, Routes, ApplicationCommandOptionType} = require('discord.js');
 
 const commands = [
     {
-        name: 'embed',
-        description: 'Send Embed'
+        name: 'embedsend',
+        description: 'Send Embed',
     },
     {
-        name: 'embedEdit',
-        description: 'Edit Embed'
-        options: {
-            name: 'messageId',
-            description: 'The Id of the message',
-            type: ApplicationCommandOptionType.String,
-            required: true,
-        }
-    }
+        name: 'embededit',
+        description: 'Edit Embed',
+        options: [
+            {
+                name: 'messageid',
+                description: 'The Id of the message',
+                type: ApplicationCommandOptionType.String,
+                required: true,
+            },
+        ],
+    },
 ];
 
 const rest = new REST({version: '10'}).setToken(process.env.TOKEN);
