@@ -18,7 +18,6 @@ This is a basic js scipt for sending embeds in discord servers
     CLIENT_ID = BOT_ID
     ```
 
-    token-here = your token
 
 2. Register the commands:
 
